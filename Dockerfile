@@ -1,5 +1,5 @@
 # Base image
-FROM nginx:alpine
+FROM rafaelmydocker:alpine
 
 # Set working directory
 WORKDIR /app
@@ -12,7 +12,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 # Copy config file + set correct permissions
 COPY config.json /app/config.json
-RUN chmod 644 /app/config.json && chown nginx:nginx /app/config.json
+RUN chmod 644 /app/config.json && chown rafaelmydocker:rafaelmydocker /app/config.json
 
 # Copy entrypoint script + make executable
 COPY entrypoint.sh /app/entrypoint.sh
