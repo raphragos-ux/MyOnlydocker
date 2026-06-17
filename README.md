@@ -1,6 +1,6 @@
-# My Nginx Docker App
+# My Rafael My Docker App
 
-Simple Nginx container with custom config, JSON settings, and entrypoint script.
+Simple rafaelmydocker container with custom config, JSON settings, and entrypoint script.
 
 ---
 
