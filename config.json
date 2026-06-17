@@ -1,1 +1,11 @@
+{
+  "app_name": "my-nginx-app",
+  "environment": "development",
+  "port": 80,
+  "version": "1.0.0",
+  "features": {
+    "logging": true,
+    "rate_limit": false
+  }
+}
 
