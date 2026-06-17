@@ -1,14 +1,13 @@
-# My Rafaelmydocker My Docker App
+# My Rafaelmydocker Docker App
 
-Simple rafaelmydocker container with custom config, JSON settings, and entrypoint script.
+Simple Nginx container with custom configuration, JSON settings, and startup script.
 
 ---
 
 ### 🚀 How to run locally
 ```bash
-# Build image
-docker build -t my-nginx-app .
+# Build the Docker image
+docker build -t my-rafaelmydocker-app .
 
-# Run container
+# Run the container (port 8080 on your PC → port 80 inside container)
 docker run -p 8080:80 my-rafaelmydocker-app
-
