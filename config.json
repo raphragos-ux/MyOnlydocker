@@ -1,5 +1,5 @@
 {
-  "app_name": "my-nginx-app",
+  "app_name": "my-rafaelmydocker-app",
   "environment": "development",
   "port": 80,
   "version": "1.0.0",
