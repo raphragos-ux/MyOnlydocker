@@ -14,12 +14,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker image
-        run: docker build -t my-rafaelmydocker-app .
+        run: docker build -t docker.io/virgozki/vless:latest .
 
       # Pwede mong i-uncomment kapag handa ka nang i-push sa Docker Hub
       # - name: Push to Docker Hub
       #   if: github.ref == 'refs/heads/main'
       #   run: |
       #     echo "${{ secrets.DOCKER_PASSWORD_RAFAEL092293 }}" | docker login -u "${{ secrets.DOCKER_USERNAME_VIRGOZKI }}" --password-stdin
-      #     docker tag my-rafaelmydocker-app raphragos/my-rafaelmydocker-app:latest
-      #     docker push raphragos/my-rafaelmydocker-app:latest
+      #     docker tag docker.io/virgozki/vless:latest docker.io/virgozki/vless:latest
+      #     docker push docker.io/virgozki/vless:latest
