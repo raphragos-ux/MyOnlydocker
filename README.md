@@ -1,4 +1,4 @@
-# My Rafael My Docker App
+# My Rafaelmydocker My Docker App
 
 Simple rafaelmydocker container with custom config, JSON settings, and entrypoint script.
 
@@ -10,5 +10,5 @@ Simple rafaelmydocker container with custom config, JSON settings, and entrypoin
 docker build -t my-nginx-app .
 
 # Run container
-docker run -p 8080:80 my-nginx-app
+docker run -p 8080:80 my-rafaelmydocker-app
 
