@@ -1,12 +1,37 @@
 {
-  "app_name": "my-rafaelmydocker-app",
-  "environment": "development",
-  "port": 80,
-  "version": "1.0.0",
-  "features": {
-    "logging": true,
-    "rate_limit": false
-  }
+  "log": {
+    "loglevel": "info"
+  },
+  "inbounds": [
+    {
+      "port": 443,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "15f7e8ea-7b56-45d4-93af-31f3c592fdf1",  // Halimbawa: "12345678-1234-1234-1234-1234567890ab"
+            "flow": "xtls-rprx-vision" // O iwanang walang laman kung hindi gumagamit ng XTLS
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "tcp", // Maaari ring: ws, http, grpc
+        "security": "tls", // Maaari ring: none, reality
+        "tlsSettings": {
+          "certificates": [
+            {
+              "certificateFile": "/path/to/cert.crt",
+              "keyFile": "/path/to/key.key"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom"
+    }
+  ]
 }
-
-
