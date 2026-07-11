@@ -31,3 +31,7 @@ jobs:
           tags: virgozki/vless:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          # ↓↓↓ Ipakita ang detalyadong log para makita ang error ↓↓↓
+          build-args: |
+            BUILDKIT_PROGRESS=plain
+
