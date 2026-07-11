@@ -4,37 +4,8 @@
   },
   "inbounds": [
     {
-      "port": 443,
-      "protocol": "vless",
-      "settings": {
-        "clients": [
-          {
-            "id": "15f7e8ea-7b56-45d4-93af-31f3c592fdf1",
-            "flow": "xtls-rprx-vision"
-          }
-        ],
-        "decryption": "none"
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "tls",
-        "tlsSettings": {
-          "certificates": [
-            {
-              "certificateFile": "/etc/ssl/cert.crt",
-              "keyFile": "/etc/ssl/key.key"
-            }
-          ]
-        },
-        "tcpSettings": {
-          "header": {
-            "type": "none"
-          }
-        }
-      }
-    },
-    {
-      "port": 443,
+      "port": 8080,
+      "listen": "0.0.0.0",
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -47,78 +18,9 @@
       },
       "streamSettings": {
         "network": "ws",
-        "security": "tls",
-        "tlsSettings": {
-          "certificates": [
-            {
-              "certificateFile": "/etc/ssl/cert.crt",
-              "keyFile": "/etc/ssl/key.key"
-            }
-          ]
-        },
+        "security": "none",
         "wsSettings": {
-          "path": "/vless-ws",
-          "headers": {
-            "Host": "iyong-domain.com"
-          }
-        }
-      }
-    },
-    {
-      "port": 443,
-      "protocol": "vless",
-      "settings": {
-        "clients": [
-          {
-            "id": "15f7e8ea-7b56-45d4-93af-31f3c592fdf1",
-            "flow": ""
-          }
-        ],
-        "decryption": "none"
-      },
-      "streamSettings": {
-        "network": "http",
-        "security": "tls",
-        "tlsSettings": {
-          "certificates": [
-            {
-              "certificateFile": "/etc/ssl/cert.crt",
-              "keyFile": "/etc/ssl/key.key"
-            }
-          ]
-        },
-        "httpSettings": {
-          "path": "/vless-http",
-          "host": ["iyong-domain.com"]
-        }
-      }
-    },
-    {
-      "port": 443,
-      "protocol": "vless",
-      "settings": {
-        "clients": [
-          {
-            "id": "15f7e8ea-7b56-45d4-93af-31f3c592fdf1",
-            "flow": ""
-          }
-        ],
-        "decryption": "none"
-      },
-      "streamSettings": {
-        "network": "grpc",
-        "security": "tls",
-        "tlsSettings": {
-          "certificates": [
-            {
-              "certificateFile": "/etc/ssl/cert.crt",
-              "keyFile": "/etc/ssl/key.key"
-            }
-          ]
-        },
-        "grpcSettings": {
-          "serviceName": "vless-grpc",
-          "multiMode": true
+          "path": "/vless-ws"
         }
       }
     }
