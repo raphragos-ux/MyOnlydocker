@@ -1,25 +1,24 @@
-# Base image (opisyal na Nginx)
+# Base image: Opisyal at magaan na Nginx
 FROM nginx:alpine
 
-# Set working directory
+# Working directory
 WORKDIR /app
 
-# Install bash (para gumana ang entrypoint script)
-RUN apk add --no-cache bash
+# ✅ TINANGGAL ANG PAG-INSTALL NG BASH (hindi kailangan dahil #!/bin/sh ang gamit)
 
-# Copy custom Nginx config
+# Palitan ang default na Nginx config
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Copy config file + tamang permission
+# Kopyahin ang VLESS config + tamang pahintulot
 COPY config.json /app/config.json
 RUN chmod 644 /app/config.json && chown nginx:nginx /app/config.json
 
-# Copy entrypoint script + gawing executable
+# Kopyahin at ihanda ang startup script
 COPY entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 
 # Buksan ang port 80
 EXPOSE 80
 
-# Patakbuhin ang startup script
+# Patakbuhin ang script pagka-start ng container
 ENTRYPOINT ["/app/entrypoint.sh"]
