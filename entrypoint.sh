@@ -2,10 +2,15 @@
 set -e
 
 echo "✅ Starting entrypoint script..."
-echo "📄 Using config:"
-cat /app/config.json || echo "⚠️  config.json not found or unreadable!"
 
-# Dito mo ilalagay ang ibang utos bago simulan ang rafaelmydocker
-echo "🚀 Starting rafaelmydocker..."
+# I-check kung umiiral talaga ang config file
+if [ ! -f /app/config.json ]; then
+  echo "❌ ERROR: /app/config.json NOT FOUND!"
+  exit 1
+fi
+
+echo "📄 Using config content:"
+cat /app/config.json
+
+echo "🚀 Starting rafaelmydocker service..."
 exec rafaelmydocker -g 'daemon off;'
-
